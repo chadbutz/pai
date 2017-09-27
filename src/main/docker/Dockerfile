@@ -14,7 +14,11 @@ RUN \
   useradd -ms /bin/bash $USER_NAME && \
   mkdir -p $APP_HOME
 
+RUN \
+  cat $APP_HOME
+ 
 ADD pai.jar ${APP_HOME}/pai.jar
+
 RUN \
   chown $USER_NAME $APP_HOME/pai.jar && \
   bash -c 'touch ${APP_HOME}/pai.jar'
