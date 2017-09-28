@@ -158,7 +158,7 @@
 					<!-- First add server entry in settings.xml -->
 					<serverId>docker-hub</serverId>
 <!-- 					Uses ~/.docker/config.json created once logged in using "docker login" command -->
-<!-- 					<useConfigFile>true</useConfigFile> -->
+ 					<useConfigFile>true</useConfigFile>
 
 				    <imageName>${docker.image.prefix}/${project.artifactId}:${project.version}</imageName>
 				    <pushImage>${push.image}</pushImage>

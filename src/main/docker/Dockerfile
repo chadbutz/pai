@@ -13,9 +13,6 @@ ENV APP_HOME /opt/poc-api/$USER_NAME
 RUN \
   useradd -ms /bin/bash $USER_NAME && \
   mkdir -p $APP_HOME
-
-RUN \
-  cat $APP_HOME
  
 ADD pai.jar ${APP_HOME}/pai.jar
 
