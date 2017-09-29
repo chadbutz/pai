@@ -27,4 +27,5 @@ WORKDIR $APP_HOME
 ENTRYPOINT ["java", "-jar", "pai.jar"]
 
 # Run as:
+# mvn -U -X package docker:build -Dpush.image=true
 # docker run -idt -p 8701:8701 -e appPort=8701 chadbutz/pai:latest

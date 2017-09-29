@@ -7,7 +7,7 @@ import org.glassfish.jersey.server.wadl.internal.WadlResource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import com.chadbutz.pai.rest.v1.HelloResource;
+import com.chadbutz.pai.rest.v1.PaiResource;
 
 import io.swagger.jaxrs.config.BeanConfig;
 import io.swagger.jaxrs.listing.ApiListingResource;
@@ -31,7 +31,7 @@ public class JerseyConfig extends ResourceConfig {
 	}
 
 	private void registerEndpoints() {
-		this.register(HelloResource.class);
+		this.register(PaiResource.class);
 		// Access through /<Jersey's servlet path>/application.wadl
 		this.register(WadlResource.class);
 	}

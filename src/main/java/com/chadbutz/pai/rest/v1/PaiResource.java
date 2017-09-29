@@ -31,9 +31,9 @@ import io.swagger.annotations.ResponseHeader;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 @Api(value = "Hello resource", produces = "application/json")
-public class HelloResource {
+public class PaiResource {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(HelloResource.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(PaiResource.class);
 
 	@GET
 	@Path("v1/hello/{name}")

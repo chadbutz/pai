@@ -19,7 +19,7 @@ import com.jayway.restassured.http.ContentType;
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
 @IntegrationTest("server.port:0")
-public class HelloResourceTest {
+public class PaiResourceTest {
 
 	private static final String API_PATH = "/api";
 	private static final String MSG_TEMPLATE = "Hello %s. Version %s - passed in %s";
