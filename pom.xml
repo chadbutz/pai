@@ -159,27 +159,7 @@
 					<serverId>docker-hub</serverId>
 <!-- 					Uses ~/.docker/config.json created once logged in using "docker login" command -->
  					<useConfigFile>true</useConfigFile>
-			   		<images>
-               		 <image>
-                    <alias>database</alias>
-                    <name>mysql:5.7</name>
-                    <run>
-                        <wait>
-                            <log>mysqld: ready for connections</log>
-                            <time>20000</time>
-                        </wait>
-                        <env>
-                            <MYSQL_ROOT_PASSWORD>abc123</MYSQL_ROOT_PASSWORD>
-                            <MYSQL_DATABASE>testdb</MYSQL_DATABASE>
-                            <MYSQL_USER>mysql</MYSQL_USER>
-                            <MYSQL_PASSWORD>mysql</MYSQL_PASSWORD>
-                        </env>
-                        <ports>
-                            <port>3306:3306</port>
-                        </ports>
-                    </run>
-              	  </image>
-                 </images>
+			   		
 				    <imageName>${docker.image.prefix}/${project.artifactId}:${project.version}</imageName>
 				    <pushImage>${push.image}</pushImage>
 				    <forceTags>true</forceTags>
