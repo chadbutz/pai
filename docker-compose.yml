@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+   db:
+     image: mysql
+     ports:
+       - "3306:3306"
+     volumes:
+       - /var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_USER: mysql
+       MYSQL_PASSWORD: mysql
+       MYSQL_ROOT_PASSWORD: mysql
+       MYSQL_DATABASE: pai
+
+   web:
+     build: .
+     ports:
+       - "8701:8701"
+     depends_on:
+       - db
+     image: chadbutz/pai:latest
