@@ -6,6 +6,13 @@ server.servlet-path: /
 # Jersey dispatcher servlet
 spring.jersey.application-path: /api
 
+spring.jpa:
+  hibernate.ddl-auto: create-drop
+logging.level:
+  org.hibernate.tool.hbm2ddl: DEBUG
+  org.hibernate.SQL: DEBUG
+  org.hibernate.type: TRACE
+
 # http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready-endpoints
 # http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-use-actuator-with-jersey
 endpoints:
