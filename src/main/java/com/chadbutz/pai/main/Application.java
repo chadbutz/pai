@@ -7,7 +7,7 @@ import org.springframework.boot.context.web.SpringBootServletInitializer;
 
 @SpringBootApplication(
     scanBasePackages = {
-        "com.chadbutz.pai.config", "com.chadbutz.pai.rest"
+        "com.chadbutz.pai.config", "com.chadbutz.pai.rest", "com.chadbutz.pai.main", "com.chadbutz.pai.model"
     }
 )
 public class Application extends SpringBootServletInitializer {
