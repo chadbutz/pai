@@ -1,30 +1,14 @@
 package com.chadbutz.pai.rest.v1;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
-import javax.ws.rs.core.UriBuilder;
-import javax.ws.rs.core.UriInfo;
-
+import com.chadbutz.pai.model.User;
+import io.swagger.annotations.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import com.chadbutz.pai.model.User;
-
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
-import io.swagger.annotations.ResponseHeader;
+import javax.ws.rs.*;
+import javax.ws.rs.core.*;
+import javax.ws.rs.core.Response.Status;
 
 @Component
 @Path("/")
@@ -93,14 +77,14 @@ public class PaiResource {
 			return Response.status(Status.NOT_FOUND).build();
 		}
 		User result = new User();
-		result.setMsg(String.format("User %s. %s", name, partialMsg));
+		result.setName(String.format("User %s. %s", name, partialMsg));
 		return Response.status(Status.OK).entity(result).build();
 	}
 
 	private Response createHelloWorld(User hello, UriInfo uriInfo) {
 		// Creates resource and return 201 with reference to new resource in Location header
 		UriBuilder builder = uriInfo.getAbsolutePathBuilder();
-		builder.path(hello.getMsg());
+		builder.path(hello.getName());
 		return Response.created(builder.build()).build();
 	}
 }
