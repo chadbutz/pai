@@ -1,6 +1,6 @@
 package com.chadbutz.pai.rest.v1;
 
-import com.chadbutz.pai.model.User;
+import com.chadbutz.pai.model.Conversation;
 import io.swagger.annotations.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +21,7 @@ public class PaiResource {
 
 	@GET
 	@Path("v1/hello/{name}")
-	@ApiOperation(value = "Gets a hello resource. Version 1 - (version in URL)", response = User.class)
+	@ApiOperation(value = "Gets a hello resource. Version 1 - (version in URL)", response = Conversation.class)
 	@ApiResponses(value = {
 		@ApiResponse(code = 200, message = "User resource found"),
 	    @ApiResponse(code = 404, message = "User resource not found")
@@ -35,7 +35,7 @@ public class PaiResource {
 	@Path("hello/{name}")
 	@Consumes("application/vnd.chadbutz-v1+json")
 	@Produces("application/vnd.chadbutz-v1+json")
-	@ApiOperation(value = "Gets a hello resource. World Version 1 (version in Accept Header)", response = User.class)
+	@ApiOperation(value = "Gets a hello resource. World Version 1 (version in Accept Header)", response = Conversation.class)
 	@ApiResponses(value = {
 		@ApiResponse(code = 200, message = "User resource found"),
 	    @ApiResponse(code = 404, message = "User resource not found")
@@ -47,13 +47,13 @@ public class PaiResource {
 
 	@POST
 	@Path("v1/hello")
-	@ApiOperation(value = "Creates hello resource. Version 1 - (version in URL)", response = User.class)
+	@ApiOperation(value = "Creates hello resource. Version 1 - (version in URL)", response = Conversation.class)
 	@ApiResponses(value = {
 		@ApiResponse(code = 201, message = "hello resource created", responseHeaders = {
 			@ResponseHeader(name = "Location", description = "The URL to retrieve created resource", response = String.class)
 		})
 	})
-	public Response createHelloVersionInUrl(User hello, @Context UriInfo uriInfo) {
+	public Response createHelloVersionInUrl(Conversation hello, @Context UriInfo uriInfo) {
 		LOGGER.info("createHelloVersionInUrl() v1");
 		return this.createHelloWorld(hello, uriInfo);
 	}
@@ -61,13 +61,13 @@ public class PaiResource {
 	@POST
 	@Path("hello")
 	@Consumes("application/vnd.chadbutz-v1+json")
-	@ApiOperation(value = "Creates hello resource. Version 1 - (version in Accept Header)", response = User.class)
+	@ApiOperation(value = "Creates hello resource. Version 1 - (version in Accept Header)", response = Conversation.class)
 	@ApiResponses(value = {
 		@ApiResponse(code = 201, message = "hello resource created", responseHeaders = {
 			@ResponseHeader(name = "Location", description = "The URL to retrieve created resource", response = String.class)
 		})
 	})
-	public Response createHelloVersionInAcceptHeader(User hello, @Context UriInfo uriInfo) {
+	public Response createHelloVersionInAcceptHeader(Conversation hello, @Context UriInfo uriInfo) {
 		LOGGER.info("createHelloVersionInAcceptHeader() v1");
 		return this.createHelloWorld(hello, uriInfo);
 	}
@@ -76,12 +76,12 @@ public class PaiResource {
 		if ("404".equals(name)) {
 			return Response.status(Status.NOT_FOUND).build();
 		}
-		User result = new User();
+		Conversation result = new Conversation();
 		result.setName(String.format("User %s. %s", name, partialMsg));
 		return Response.status(Status.OK).entity(result).build();
 	}
 
-	private Response createHelloWorld(User hello, UriInfo uriInfo) {
+	private Response createHelloWorld(Conversation hello, UriInfo uriInfo) {
 		// Creates resource and return 201 with reference to new resource in Location header
 		UriBuilder builder = uriInfo.getAbsolutePathBuilder();
 		builder.path(hello.getName());
