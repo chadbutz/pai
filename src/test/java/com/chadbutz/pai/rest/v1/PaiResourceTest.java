@@ -1,24 +1,17 @@
 package com.chadbutz.pai.rest.v1;
 
+import com.jayway.restassured.RestAssured;
+import com.jayway.restassured.http.ContentType;
 import org.apache.http.HttpStatus;
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.IntegrationTest;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 
-import com.chadbutz.pai.main.Application;
-import com.jayway.restassured.RestAssured;
-import com.jayway.restassured.http.ContentType;
-
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = Application.class)
-@WebAppConfiguration
-@IntegrationTest("server.port:0")
+//@RunWith(SpringJUnit4ClassRunner.class)
+//@SpringApplicationConfiguration(classes = Application.class)
+//@WebAppConfiguration
+//@IntegrationTest("server.port:0")
 public class PaiResourceTest {
 
 	private static final String API_PATH = "/api";
