@@ -22,7 +22,7 @@ import com.jayway.restassured.http.ContentType;
 public class PaiResourceTest {
 
 	private static final String API_PATH = "/api";
-	private static final String MSG_TEMPLATE = "Hello %s. Version %s - passed in %s";
+	private static final String MSG_TEMPLATE = "User %s. Version %s - passed in %s";
 
 	@Value("${local.server.port}")
 	private int port;
