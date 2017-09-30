@@ -132,11 +132,6 @@
 			</build>
 		</profile>
 	</profiles>
-
-	<properties>
-		<java.version>1.8</java.version>
-	</properties>
-
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
