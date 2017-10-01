@@ -5,11 +5,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 
-@SpringBootApplication(
-    scanBasePackages = {
-        "com.chadbutz.pai.model","com.chadbutz.pai.main"
-    }
-)
+@SpringBootApplication
+//		(
+//    scanBasePackages = {
+//        "com.chadbutz.pai.model","com.chadbutz.pai.main"
+//    }
+//)
 public class Application extends SpringBootServletInitializer {
 
 	@Override
