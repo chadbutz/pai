@@ -23,9 +23,8 @@ public class MainController {
 		// @ResponseBody means the returned String is the response, not a view name
 		// @RequestParam means it is a parameter from the GET or POST request
 
-		Conversation n = new Conversation();
-		n.setName(name);
-		n.setEmail(email);
+		Conversation n = new Conversation(name, email);
+
 		conversationRepository.save(n);
 		return "Saved";
 	}

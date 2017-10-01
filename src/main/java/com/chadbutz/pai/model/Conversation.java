@@ -15,6 +15,15 @@ public class Conversation {
 
 	private String email;
 
+	public Conversation(String name, String email) {
+		this.name = name;
+		this.email = email;
+	}
+
+	Conversation() {
+
+	}
+
 	public Integer getId() {
 		return id;
 	}
