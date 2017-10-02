@@ -1,6 +1,8 @@
 create table conversation (
     id int NOT NULL AUTO_INCREMENT,
-    name VARCHAR(50),
-    email VARCHAR(50),
+    dialogue TEXT,
+    response TEXT,
+    data TEXT,
+    action TEXT,
     PRIMARY KEY (id)
 );
