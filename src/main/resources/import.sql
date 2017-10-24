@@ -1,1 +1,2 @@
 INSERT INTO conversation (dialogue, response, data, action) VALUES ('Test Insert', 'Testing', 'Data', 'Action');
+INSERT INTO volunteer (first_name, last_name, email, confirmed) VALUES ('Chad', 'Feigenbutz', 'cfeigenbutz@royall.com', 'Y');

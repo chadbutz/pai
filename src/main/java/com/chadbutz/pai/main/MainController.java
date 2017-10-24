@@ -18,7 +18,7 @@ import ai.api.model.AIRequest;
 import ai.api.model.AIResponse;
 
 @RestController    // This means that this class is a Controller
-@RequestMapping(path="/api") // This means URL's start with /demo (after Application path)
+@RequestMapping(path="/pai") // This means URL's start with /demo (after Application path)
 @EnableJpaRepositories(basePackageClasses = ConversationRepository.class)
 public class MainController {
 	// This means to get the bean called userRepository
@@ -73,5 +73,10 @@ public class MainController {
 		// This returns a JSON or XML with the users
 		return conversationRepository.findAll();
 	}
+
+    @RequestMapping(value = "/")
+    public String index() {
+        return "index.html";
+    }
 
 }
